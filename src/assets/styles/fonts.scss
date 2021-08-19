@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import '/appico-style.scss';
+
+.font-bold {
+  font-weight: $font-bold;
+}
+.font-xxs {
+  font-size: $font-xxs;
+  font-weight: $font-regular;
+}
+
+.font-xs {
+  font-size: $font-xs;
+  font-weight: $font-regular;
+}
+
+.font-sm {
+  font-size: $font-sm;
+  font-weight: $font-regular;
+}
+
+.font-md {
+  font-size: $font-md;
+  font-weight: $font-regular;
+}
+
+.font-lg {
+  font-size: $font-lg;
+  font-weight: $font-regular;
+}
+
+.font-xl {
+  font-size: $font-xl;
+  font-weight: $font-regular;
+}

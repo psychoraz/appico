@@ -1,0 +1,57 @@
+.nav {
+  display: flex;
+  background-color: $foreground-color;
+
+  &__main {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $main-height;
+    padding: $space-md $space-lg;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $border-color;
+    z-index: 20;
+  }
+
+  &__side {
+    top: $main-height;
+    width: $side-width;
+    height: 100%;
+    padding: $space-xl 0 $space-md 0;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-right: 1px solid $border-color;
+    z-index: 10;
+  }
+}
+
+.page {
+  display: flex;
+  width: 100%;
+  height: calc( 100% - #{$main-height} );
+
+  &__content {
+    flex-grow: 1;
+    padding: 0 $space-xl $space-xl $space-xl;
+  }
+
+  .title {
+    color: $color-font-dark-strong;
+    font-size: $font-lg;
+    font-weight: $font-bold;
+  }
+}
+
+.card {
+  background-color: $color-white;
+  padding: $space-xl;
+
+  &.--transparent {
+    background-color: transparent;
+    padding: $space-xl 0;
+  }
+}
