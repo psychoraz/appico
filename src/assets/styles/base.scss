@@ -42,3 +42,10 @@ h1, h2, h3, h4, h5, h6, p {
     transition: background-color .25s ease;
   }
 }
+
+.input {
+  padding: $space-sm $space-md;
+  font-size: $font-sm;
+  border: 1px solid $color-font-light-weak;
+  border-radius: $border-radius;
+}

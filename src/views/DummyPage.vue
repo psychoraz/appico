@@ -4,8 +4,8 @@
       <section class="card --transparent">
         <h1 class="title">{{ $t('dummy.title') }}</h1>
       </section>
-      <section class="card">
-        <p class="text">{{ $t('dummy.text') }}</p>
+      <section class="card --padding">
+          <p class="text">{{ $t('dummy.text') }}</p>
       </section>
     </section>
   </div>
@@ -16,3 +16,9 @@ export default {
   name: 'DummyPage'
 }
 </script>
+
+<style lang="scss" scoped>
+.--padding {
+  padding: $space-xl;
+}
+</style>

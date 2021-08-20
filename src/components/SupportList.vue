@@ -1,6 +1,5 @@
 <template>
-  <section class="card">
-    <h3 class="title font-bold font-lg">{{ $t('overview.dashboard.support-requests.title') }}</h3>
+  <section>
     <article v-if="loading">
       <Spinner/>
     </article>
@@ -71,6 +70,7 @@ export default {
   },
   watch: {
     randomPeople: function() {
+      this.peoplePerSlide = []
       while(this.randomPeople.length) {
         this.peoplePerSlide.push(this.randomPeople.splice(0, this.perSlide));
       }

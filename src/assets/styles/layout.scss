@@ -42,7 +42,6 @@
 }
 
 .page {
-  overflow: auto;
   grid-area: page;
   padding: 0 $space-xl $space-xl $space-xl;
 
@@ -55,7 +54,7 @@
 
 .card {
   background-color: $color-white;
-  padding: $space-xl;
+  margin-bottom: $space-lg;
 
   &.--transparent {
     background-color: transparent;

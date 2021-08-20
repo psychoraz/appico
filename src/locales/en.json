@@ -24,8 +24,16 @@
           "status": "Status"
         },
         "info": "Showing <span class='strong'>{first}</span> to <span class='strong'>{last}</span> of <span class='total'>{total} elements</span>",
-        "pager": "Page"
-      }
+        "pager": "Page",
+        "filter": "Filter results by name, email"
+      },
+      "general-results": {
+        "title": "General results"
+      },
+      "results-category": {
+        "title": "Ratings by category"
+      },
+      "terms": {}
     }
   },
   "dummy": {
