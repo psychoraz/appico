@@ -5,7 +5,7 @@
     </article>
 
     <section v-show="!loading">
-      <TicketLine
+      <SupportListLine
         class="table-line"
         :fullname="$t('overview.dashboard.support-requests.header.name')"
         :email="$t('overview.dashboard.support-requests.header.email')"
@@ -19,7 +19,7 @@
           v-for="(slide, slideIndex) in peoplePerSlide"
           :key="slideIndex"
         >
-          <TicketLine
+          <SupportListLine
             v-for="(people, peopleIndex) in slide"
             :key="`${slideIndex}-${peopleIndex}`"
             class="table-line"
@@ -36,13 +36,13 @@
 </template>
 
 <script>
-import TicketLine from '@/components/TicketLine.vue'
+import SupportListLine from '@/components/SupportListLine.vue'
 import Spinner from  '@/components/Spinner.vue'
 
 export default {
   name: 'SupportList',
   components: {
-    TicketLine,
+    SupportListLine,
     Spinner
   },
   props: {

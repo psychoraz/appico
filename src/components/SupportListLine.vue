@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'TicketLine',
+  name: 'SupportListLine',
   props: {
     fullname: {
       type: String,
