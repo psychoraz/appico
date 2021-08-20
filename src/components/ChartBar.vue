@@ -14,8 +14,8 @@ export default defineComponent({
     BarChart,
   },
   props: {
-    primary: {
-      type: Boolean,
+    color: {
+      type: String,
       required: true
     }
   },
@@ -72,20 +72,20 @@ export default defineComponent({
           Math.random(0,100)
         ],
         backgroundColor: [
-          props.primary ? '#0077FF' : '#F0166D',
-          props.primary ? '#0077FF50' : '#F0166D50',
-          props.primary ? '#0077FF' : '#F0166D',
-          props.primary ? '#0077FF50' : '#F0166D50',
-          props.primary ? '#0077FF' : '#F0166D',
-          props.primary ? '#0077FF50' : '#F0166D50',
-          props.primary ? '#0077FF' : '#F0166D',
-          props.primary ? '#0077FF50' : '#F0166D50',
-          props.primary ? '#0077FF' : '#F0166D',
-          props.primary ? '#0077FF50' : '#F0166D50',
-          props.primary ? '#0077FF' : '#F0166D',
-          props.primary ? '#0077FF50' : '#F0166D50',
-          props.primary ? '#0077FF' : '#F0166D',
-          props.primary ? '#0077FF50' : '#F0166D50',
+          props.color,
+          `${props.color}50`,
+          props.color,
+          `${props.color}50`,
+          props.color,
+          `${props.color}50`,
+          props.color,
+          `${props.color}50`,
+          props.color,
+          `${props.color}50`,
+          props.color,
+          `${props.color}50`,
+          props.color,
+          `${props.color}50`,
         ]
       }]
     }));

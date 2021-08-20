@@ -1,17 +1,31 @@
 <template>
   <div class="page page--overview page--dashboard">
-    <section class="card --transparent">
+    <section class="main-title card --transparent">
       <h1 class="title">{{ $t('overview.dashboard.title') }}</h1>
+      <div class="flex">
+        <ProgressBar class="progress" :percent="65"/>
+        <p v-html="$t('overview.dashboard.insertions', {insertions: insertions})"></p>
+      </div>
     </section>
 
     <section class="card grid">
       <section class="general">
-        <GeneralResults/>
+        <Summary
+          i18n="overview.dashboard.general-results"
+          :followers="9401"
+          color="#0077FF"
+        />
       </section>
       <section class="ratings">
-        <RatingsCategory/>
+        <Summary
+          i18n="overview.dashboard.ratings-category"
+          :followers="3900"
+          color="#F0166D"
+        />
       </section>
-      <section class="terms">terms</section>
+      <section class="terms">
+        <Terms/>
+      </section>
       <section class="support">
         <SupportList
           class="support-list"
@@ -37,8 +51,9 @@
 
 <script>
 import people from '@/infra/people.js'
-import GeneralResults from '@/components/GeneralResults.vue'
-import RatingsCategory from '@/components/RatingsCategory.vue'
+import ProgressBar from '@/components/ProgressBar.vue'
+import Summary from '@/components/Summary.vue'
+import Terms from '@/components/Terms.vue'
 import SupportList from '@/components/SupportList.vue'
 import SupportListInfo from '@/components/SupportListInfo.vue'
 import SupportListPager from '@/components/SupportListPager.vue'
@@ -46,8 +61,9 @@ import SupportListPager from '@/components/SupportListPager.vue'
 export default {
   name: 'DashboardPage',
   components: {
-    GeneralResults,
-    RatingsCategory,
+    ProgressBar,
+    Summary,
+    Terms,
     SupportList,
     SupportListInfo,
     SupportListPager
@@ -62,6 +78,7 @@ export default {
   },
   data() {
     return {
+      insertions: 643,
       filter: '',
       perSlide: 0,
       howMany: 45,
@@ -132,10 +149,27 @@ export default {
     grid-area: support;
     overflow: auto;
   }
+}
 
-  .input {
-    text-align: right;
-    width: 225px;
+.main-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  /deep/ .font-bold {
+    color: $color-font-dark-weak;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    .progress {
+      margin-right: $space-md;
+    }
   }
 }
 </style>

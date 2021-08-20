@@ -13,6 +13,7 @@
   "overview": {
     "dashboard": {
       "title": "Data overview",
+      "insertions": "<span class='font-bold'>{insertions}</span> insertions needed to complete",
       "support-requests": {
         "title": "Support Requests",
         "header": {
@@ -28,10 +29,12 @@
         "filter": "Filter results by name, email"
       },
       "general-results": {
-        "title": "General results"
+        "title": "General results",
+        "followers": "followers"
       },
       "ratings-category": {
-        "title": "Ratings by category"
+        "title": "Ratings by category",
+        "followers": "followers"
       },
       "terms": {}
     }

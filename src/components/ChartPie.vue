@@ -6,8 +6,8 @@
       line="round"
       :thickness="10"
       :emptyThickness="10"
-      :color="primary ? '#0077FF' : '#F0166D'"
-      :emptyColor="primary ? '#0077FF50' : '#F0166D50'"
+      :color="color"
+      :emptyColor="`${color}50`"
       :loading="false"
       :legend="false"
     />
@@ -22,8 +22,8 @@ Vue.use(VueEllipseProgress);
 export default {
   name: 'ChartPie',
   props: {
-    primary: {
-      type: Boolean,
+    color: {
+      type: String,
       required: true
     }
   }

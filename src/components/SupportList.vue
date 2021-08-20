@@ -104,6 +104,10 @@ export default {
   margin-bottom: $space-sm;
 }
 
+.input {
+  text-align: right;
+  width: 225px;
+}
 
 .support-header {
   display: flex;

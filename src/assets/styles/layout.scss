@@ -54,10 +54,12 @@
 
 .card {
   background-color: $color-white;
-  margin-bottom: $space-lg;
+  margin-bottom: $space-md;
+  border-radius: $border-radius;
 
   &.--transparent {
     background-color: transparent;
     padding: $space-xl 0;
+    margin-bottom: 0;
   }
 }
