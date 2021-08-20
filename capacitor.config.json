@@ -1,0 +1,6 @@
+{
+  "appId": "appico.mzubiaga.net",
+  "appName": "appico",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
