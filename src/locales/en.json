@@ -12,7 +12,20 @@
   },
   "overview": {
     "dashboard": {
-      "title": "Data overview"
+      "title": "Data overview",
+      "support-requests": {
+        "title": "Support Requests",
+        "header": {
+          "name": "Name",
+          "email": "Email",
+          "time": "Time",
+          "phone": "Phone",
+          "city": "City",
+          "status": "Status"
+        },
+        "info": "Showing <span class='strong'>{first}</span> to <span class='strong'>{last}</span> of <span class='total'>{total} elements</span>",
+        "pager": "Page"
+      }
     }
   },
   "dummy": {

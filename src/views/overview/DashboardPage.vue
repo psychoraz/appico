@@ -3,53 +3,78 @@
     <section class="card --transparent">
       <h1 class="title">{{ $t('overview.dashboard.title') }}</h1>
     </section>
-    <section class="card">
-      <p class="text">{{ $t('dummy.text') }}</p>
-    </section>
 
-    <section class="card">
-      <swiper :options="swiperOptions" ref="swiperInstance">
-        <swiper-slide
-          v-for="(value, index) in swiperSlides"
-          :key="index"
-        >
-          {{ value }}
-        </swiper-slide>
-      </swiper>
-      <div
-        v-for="(value, index) in swiperSlides"
-        :key="index"
-      >
-      <span @click="slideTo(index)" style='border: 1px solid black'>{{ value }}</span>
-      </div>
+    <SupportList
+      class="support-list"
+      :randomPeople="randomPeople"
+      :loading="loadingRandomPeople"
+      @supportlist:swiper="setSupportListSwiper"
+    />
+    <section class="support-footer" v-if="supportListSwiper">
+      <SupportListInfo
+        :swiperInstance="supportListSwiper"
+        :perPage="perSlide"
+        :total="howMany"
+      />
+      <SupportListPager
+        :swiperInstance="supportListSwiper"
+      />
     </section>
   </div>
 </template>
 
 <script>
-
+import people from '@/infra/people.js'
+import SupportList from '@/components/SupportList.vue'
+import SupportListInfo from '@/components/SupportListInfo.vue'
+import SupportListPager from '@/components/SupportListPager.vue'
 
 export default {
   name: 'DashboardPage',
+  components: {
+    SupportList,
+    SupportListInfo,
+    SupportListPager
+  },
   data() {
     return {
-      swiperInstance: false,
-      swiperSlides: 9,
-      swiperOptions: {
-        slidesPerView: 1,
-        centeredSlides: true,
-        allowTouchMove: true,
-        spaceBetween: 15
-      }
+      perSlide: 0,
+      howMany: 45,
+      fields: [
+        'name',
+        'email',
+        'phone',
+        'location',
+        'registered'
+      ],
+      randomPeople: [],
+      loadingRandomPeople: false,
+      supportListSwiper: false
     }
   },
   methods: {
-    slideTo (index) {
-      this.swiperInstance.slideTo(index)
+    setSupportListSwiper(swiper, perSlide) {
+      this.supportListSwiper = swiper
+      this.perSlide = perSlide
     }
   },
-  mounted () {
-    this.swiperInstance = this.$refs.swiperInstance.$swiper
+  async mounted () {
+    this.loadingRandomPeople = true
+    this.randomPeople = await people.getRandomPeople(this.howMany, this.fields)
+    console.log(this.randomPeople)
+    this.loadingRandomPeople = false
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.support-list {
+  margin-bottom: $space-lg;
+}
+
+.support-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+</style>
