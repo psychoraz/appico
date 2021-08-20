@@ -1,7 +1,7 @@
 <template>
   <div class="nav nav__side">
     <router-link
-        v-for="(route, index) in routes"
+        v-for="(route, index) in $route.meta.sideMenu"
         :key="index"
         class="nav__link"
         :class="{ '--active': $route.name === route.name}"
@@ -14,18 +14,7 @@
 
 <script>
 export default {
-  name: 'OverviewSide',
-  data () {
-    return {
-      routes: [
-        { name: 'Dashboard', icon: 'icon-dashboard' },
-        { name: 'Support', icon: 'icon-support' },
-        { name: 'Files', icon: 'icon-files' },
-        { name: 'Mail', icon: 'icon-mail' },
-        { name: 'Settings', icon: 'icon-settings' }
-      ]
-    }
-  }
+  name: 'SideMenu'
 }
 </script>
 

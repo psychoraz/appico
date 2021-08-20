@@ -12,11 +12,12 @@
         v-for="(route, index) in routes"
         :key="index"
         class="nav__link"
-        :class="{ '--active': $route.name === route.name}"
+        :class="{ '--active': $route.name.includes(route.name.substr(0, route.name.indexOf('-')))}"
         :to="{ name: route.name }"
       >
         {{ route.text }}
       </router-link>
+      <div class="nav__active"></div>
     </section>
     <section class="nav__actions">
       <button class="button">{{ $t('menu.premium') }}</button>
@@ -35,11 +36,14 @@ export default {
   data () {
     return {
       routes: [
-        { name: 'Dashboard', text: this.$t('menu.section.overview') },
-        { name: 'Campaign', text: this.$t('menu.section.campaign') },
-        { name: 'Analytics', text: this.$t('menu.section.analytics') }
+        { name: 'Overview-Dashboard', text: this.$t('menu.section.overview') },
+        { name: 'Campaigns-Dashboard', text: this.$t('menu.section.campaign') },
+        { name: 'Analytics-Dashboard', text: this.$t('menu.section.analytics') }
       ]
     }
+  },
+  created() {
+    console.log(this.$route.name)
   }
 }
 </script>

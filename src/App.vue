@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="app">
     <MainMenu/>
+    <SideMenu/>
     <transition name="fade" mode="out-in">
       <router-view/>
     </transition>
@@ -9,11 +10,13 @@
 
 <script>
 import MainMenu from '@/components/nav/MainMenu.vue'
+import SideMenu from '@/components/nav/SideMenu.vue'
 
 export default {
   name: 'App',
   components: {
-    MainMenu
+    MainMenu,
+    SideMenu
   }
 }
 </script>

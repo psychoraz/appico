@@ -1,11 +1,22 @@
+
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-areas:  "mainmenu mainmenu"
+                        "sidemenu page";
+  grid-template-rows: 70px auto;
+  grid-template-columns: 90px auto;
+}
+
 .nav {
+  position: sticky;
   display: flex;
+  left: 0;
   background-color: $foreground-color;
 
   &__main {
-    position: sticky;
+    grid-area: mainmenu;
     top: 0;
-    left: 0;
     width: 100%;
     height: $main-height;
     padding: $space-md $space-lg;
@@ -16,6 +27,7 @@
   }
 
   &__side {
+    grid-area: sidemenu;
     top: $main-height;
     width: $side-width;
     height: 100%;
@@ -30,14 +42,9 @@
 }
 
 .page {
-  display: flex;
+  grid-area: page;
   width: 100%;
-  height: calc( 100% - #{$main-height} );
-
-  &__content {
-    flex-grow: 1;
-    padding: 0 $space-xl $space-xl $space-xl;
-  }
+  padding: 0 $space-xl $space-xl $space-xl;
 
   .title {
     color: $color-font-dark-strong;

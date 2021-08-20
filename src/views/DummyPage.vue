@@ -1,6 +1,5 @@
 <template>
   <div class="page page--dummy">
-    <OverviewSide/>
     <section class="page__content">
       <section class="card --transparent">
         <h1 class="title">{{ $t('dummy.title') }}</h1>
@@ -13,12 +12,7 @@
 </template>
 
 <script>
-import OverviewSide from '@/components/nav/OverviewSide.vue'
-
 export default {
-  name: 'DummyPage',
-  components: {
-    OverviewSide
-  }
+  name: 'DummyPage'
 }
 </script>
