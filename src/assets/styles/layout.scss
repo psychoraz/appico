@@ -42,8 +42,8 @@
 }
 
 .page {
+  overflow: hidden;
   grid-area: page;
-  width: 100%;
   padding: 0 $space-xl $space-xl $space-xl;
 
   .title {

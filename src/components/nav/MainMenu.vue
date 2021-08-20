@@ -41,9 +41,6 @@ export default {
         { name: 'Analytics-Dashboard', text: this.$t('menu.section.analytics') }
       ]
     }
-  },
-  created() {
-    console.log(this.$route.name)
   }
 }
 </script>
