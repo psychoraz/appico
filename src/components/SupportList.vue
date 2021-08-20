@@ -5,6 +5,17 @@
     </article>
 
     <section v-show="!loading">
+      <div class="support-header">
+        <h3 class="title font-bold font-lg">{{ $t('overview.dashboard.support-requests.title') }}</h3>
+        <input
+          v-model="filter"
+          class="input"
+          type="text"
+          :placeholder="$t('overview.dashboard.support-requests.filter')"
+          @input="$emit('supportlist:filter', filter)"
+        />
+      </div>
+
       <SupportListLine
         class="table-line"
         :fullname="$t('overview.dashboard.support-requests.header.name')"
@@ -57,6 +68,7 @@ export default {
   },
   data() {
     return {
+      filter: '',
       perSlide: 6,
       peoplePerSlide: [],
       swiperInstance: false,
@@ -86,10 +98,20 @@ export default {
 <style lang="scss" scoped>
 .title {
   color: $color-font-dark-strong;
-  margin-bottom: $space-lg;
 }
 
 .table-line {
   margin-bottom: $space-sm;
+}
+
+
+.support-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.support-header {
+  margin-bottom: $space-lg;
 }
 </style>

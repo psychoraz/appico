@@ -6,22 +6,19 @@
 
     <section class="card grid">
       <section class="general">
-        <h3 class="title font-md font-bold">{{ $t('overview.dashboard.general-results.title')}}</h3>
+        <GeneralResults/>
       </section>
       <section class="ratings">
         <h3 class="title font-md font-bold">{{ $t('overview.dashboard.results-category.title')}}</h3>
       </section>
       <section class="terms">terms</section>
       <section class="support">
-        <div class="support-header">
-          <h3 class="title font-bold font-lg">{{ $t('overview.dashboard.support-requests.title') }}</h3>
-          <input v-model="filter" class="input" type="text" :placeholder="$t('overview.dashboard.support-requests.filter')"/>
-        </div>
         <SupportList
           class="support-list"
           :randomPeople="filteredPeople"
           :loading="loadingRandomPeople"
           @supportlist:swiper="setSupportListSwiper"
+          @supportlist:filter="setSupportListFilter"
         />
       </section>
     </section>
@@ -40,6 +37,7 @@
 
 <script>
 import people from '@/infra/people.js'
+import GeneralResults from '@/components/GeneralResults.vue'
 import SupportList from '@/components/SupportList.vue'
 import SupportListInfo from '@/components/SupportListInfo.vue'
 import SupportListPager from '@/components/SupportListPager.vue'
@@ -47,6 +45,7 @@ import SupportListPager from '@/components/SupportListPager.vue'
 export default {
   name: 'DashboardPage',
   components: {
+    GeneralResults,
     SupportList,
     SupportListInfo,
     SupportListPager
@@ -80,6 +79,9 @@ export default {
     setSupportListSwiper(swiper, perSlide) {
       this.supportListSwiper = swiper
       this.perSlide = perSlide
+    },
+    setSupportListFilter(filter) {
+      this.filter = filter
     }
   },
   async mounted () {
@@ -91,23 +93,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title {
-  color: $color-font-dark-weak
-}
-
-.content {
-  margin-bottom: $space-lg;
-}
-
-.support-header,
 .support-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.support-header {
-  margin-bottom: $space-lg;
 }
 
 .grid {
