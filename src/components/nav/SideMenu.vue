@@ -29,6 +29,10 @@ export default {
     color: $color-font-light-weak;
     background: $foreground-color;
 
+    @include is-mobile {
+      padding: $space-lg $space-xs;
+    }
+
     &.--active {
       color: $color-primary;
 

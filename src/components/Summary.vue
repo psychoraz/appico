@@ -62,12 +62,30 @@ export default {
                         "bar pie";
   grid-template-columns: 2fr 1fr;
 
+  @include is-mobile {
+    grid-template-areas:  "text"
+                          "bar"
+                          "pie";
+    grid-template-columns: 1fr;
+  }
+
   &__text {
     grid-area: text;
+
+    @include is-mobile {
+      margin: auto;
+      margin-bottom: $space-md;
+    }
   }
 
   &__bar {
     grid-area: bar;
+    margin-right: $space-md;
+
+    @include is-mobile {
+      margin: auto;
+      margin-bottom: $space-md;
+    }
   }
 
   &__pie {

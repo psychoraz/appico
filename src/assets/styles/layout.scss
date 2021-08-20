@@ -4,8 +4,13 @@
   display: grid;
   grid-template-areas:  "mainmenu mainmenu"
                         "sidemenu page";
-  grid-template-rows: 70px auto;
-  grid-template-columns: 90px auto;
+  grid-template-rows: $main-height auto;
+  grid-template-columns: $side-width auto;
+
+  @include is-mobile {
+    grid-template-rows: $main-height auto;
+    grid-template-columns: 30px auto;
+  }
 }
 
 .nav {
@@ -24,6 +29,10 @@
     justify-content: space-between;
     border-bottom: 1px solid $border-color;
     z-index: 20;
+
+    @include is-mobile {
+
+    }
   }
 
   &__side {
@@ -38,12 +47,20 @@
     flex-wrap: nowrap;
     border-right: 1px solid $border-color;
     z-index: 10;
+
+    @include is-mobile {
+      width: 30px;
+    }
   }
 }
 
 .page {
   grid-area: page;
   padding: 0 $space-xl $space-xl $space-xl;
+
+  @include is-mobile {
+    padding: $space-sm $space-sm;
+  }
 
   .title {
     color: $color-font-dark-strong;

@@ -116,6 +116,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include is-mobile {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 .grid {
@@ -128,9 +133,36 @@ export default {
   background-color: $border-color;
   box-sizing: border-box;
 
+
+  @include is-mobile {
+    grid-template-areas:  "general"
+                          "ratings"
+                          "terms"
+                          "support";
+    grid-template-columns: 1fr;
+    grid-gap: $space-md $space-sm;
+    background: $background-color;
+  }
+  @include is-tablet {
+    grid-template-areas:  "general terms"
+                          "ratings terms"
+                          "support support";
+    grid-template-columns: 2fr 1fr;
+  }
+  @include is-laptop {
+    grid-template-areas:  "general terms"
+                          "ratings terms"
+                          "support support";
+    grid-template-columns: 2fr 1fr;
+  }
+
   > section {
     background-color: $color-white;
     padding: $space-xl;
+
+    @include is-mobile {
+      padding: $space-sm;
+    }
   }
 
   .general {
@@ -157,6 +189,18 @@ export default {
   justify-content: space-between;
   flex-wrap: nowrap;
 
+  @include is-mobile {
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .title {
+    @include is-mobile {
+      margin-bottom: $space-md;
+    }
+  }
+
   /deep/ .font-bold {
     color: $color-font-dark-weak;
   }
@@ -167,8 +211,29 @@ export default {
     justify-content: space-between;
     flex-wrap: nowrap;
 
+    @include is-tablet {
+      align-items: flex-end;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    @include is-mobile {
+      align-items: flex-end;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
     .progress {
       margin-right: $space-md;
+
+      @include is-tablet {
+        margin-right: 0;
+      }
+
+      @include is-mobile {
+        margin-right: 0;
+      }
     }
   }
 }

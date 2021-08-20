@@ -48,16 +48,6 @@ export default {
 <style lang="scss" scoped>
 .nav {
 
-  @include is-mobile {
-    border-color: red;
-  }
-  @include is-tablet {
-    border-color: green;
-  }
-  @include is-desktop {
-    border-color: blue;
-  }
-
   &__logo {
     width: calc(#{$side-width} - #{$space-lg * 2});
     margin-right: 10%;

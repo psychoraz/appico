@@ -47,6 +47,11 @@ export default defineComponent({
         legend: {
           display: false
         }
+      },
+      layout: {
+        padding: {
+          left: -10
+        }
       }
     }));
 
@@ -101,7 +106,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .bar {
-  width: 270px;
+  width: 240px;
   height: 100px;
 }
 </style>

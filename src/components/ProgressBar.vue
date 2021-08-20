@@ -24,6 +24,10 @@ export default {
   border-radius: $border-radius;
   background-color: $color-font-light-weak;
 
+  @include is-mobile {
+    width: 100%;
+  }
+
   .progress {
     position: absolute;
     top: 0;

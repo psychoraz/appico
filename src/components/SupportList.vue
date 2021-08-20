@@ -113,9 +113,21 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.support-header {
   margin-bottom: $space-lg;
+
+  @include is-mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    .title {
+      margin-bottom: $space-sm;
+    }
+
+    .input {
+      text-align: left;
+      width: 100%;
+    }
+  }
 }
 </style>
