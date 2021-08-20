@@ -9,7 +9,7 @@
         <GeneralResults/>
       </section>
       <section class="ratings">
-        <h3 class="title font-md font-bold">{{ $t('overview.dashboard.results-category.title')}}</h3>
+        <RatingsCategory/>
       </section>
       <section class="terms">terms</section>
       <section class="support">
@@ -38,6 +38,7 @@
 <script>
 import people from '@/infra/people.js'
 import GeneralResults from '@/components/GeneralResults.vue'
+import RatingsCategory from '@/components/RatingsCategory.vue'
 import SupportList from '@/components/SupportList.vue'
 import SupportListInfo from '@/components/SupportListInfo.vue'
 import SupportListPager from '@/components/SupportListPager.vue'
@@ -46,6 +47,7 @@ export default {
   name: 'DashboardPage',
   components: {
     GeneralResults,
+    RatingsCategory,
     SupportList,
     SupportListInfo,
     SupportListPager

@@ -20,7 +20,7 @@ import VueEllipseProgress from 'vue-ellipse-progress';
 Vue.use(VueEllipseProgress);
 
 export default {
-  name: 'GeneralResultsPie',
+  name: 'ChartPie',
   props: {
     primary: {
       type: Boolean,
