@@ -140,7 +140,7 @@ export default {
                           "terms"
                           "support";
     grid-template-columns: 1fr;
-    grid-gap: $space-md $space-sm;
+    grid-gap: $space-sm $space-sm;
     background: $background-color;
   }
   @include is-tablet {

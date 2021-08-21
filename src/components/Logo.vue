@@ -32,5 +32,6 @@ export default {
   display: block;
   margin: auto;
   cursor: pointer;
+  width: 100%;
 }
 </style>

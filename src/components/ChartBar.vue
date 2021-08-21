@@ -22,7 +22,8 @@ export default defineComponent({
   setup(props) {
     const options = computed(() => ({
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
+      aspectRatio: 2.5,
       scales: {
         x: {
           grid: {

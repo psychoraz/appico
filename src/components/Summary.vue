@@ -71,6 +71,7 @@ export default {
 
   &__text {
     grid-area: text;
+    margin-bottom: $space-md;
 
     @include is-mobile {
       margin: auto;

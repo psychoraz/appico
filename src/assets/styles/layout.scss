@@ -8,13 +8,13 @@
   grid-template-columns: $side-width auto;
 
   @include is-mobile {
-    grid-template-rows: $main-height auto;
+    grid-template-rows: 50px auto;
     grid-template-columns: 30px auto;
   }
 }
 
 .nav {
-  position: sticky;
+  position: fixed;
   display: flex;
   left: 0;
   background-color: $foreground-color;
@@ -31,7 +31,9 @@
     z-index: 20;
 
     @include is-mobile {
-
+      height: 50px;
+      padding: $space-sm $space-sm;
+      justify-content: flex-start;
     }
   }
 
@@ -49,6 +51,8 @@
     z-index: 10;
 
     @include is-mobile {
+      position: fixed;
+      top: 50px;
       width: 30px;
     }
   }
@@ -59,7 +63,7 @@
   padding: 0 $space-xl $space-xl $space-xl;
 
   @include is-mobile {
-    padding: $space-sm $space-sm;
+    padding: $space-sm $space-sm $space-sm $space-xs;
   }
 
   .title {
