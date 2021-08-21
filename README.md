@@ -1,5 +1,7 @@
 # appico-mzubiaga
 
+## Use npm v14.5.0
+
 ## Project setup
 ```
 npm install
