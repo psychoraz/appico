@@ -1,6 +1,9 @@
 # appico-mzubiaga
 
-## Use npm v14.5.0
+## Use node v14.15.0 (npm v6.14.8)
+```
+nvm use
+```
 
 ## Project setup
 ```
