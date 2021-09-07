@@ -5,7 +5,7 @@
         <h1 class="title">{{ $t('dummy.title') }}</h1>
       </section>
       <section class="card --padding">
-          <p class="text">{{ $t('dummy.text') }}</p>
+        <p class="text">{{ $t('dummy.text') }}</p>
       </section>
     </section>
   </div>
